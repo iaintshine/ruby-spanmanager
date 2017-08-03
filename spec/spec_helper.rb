@@ -1,5 +1,13 @@
 require "bundler/setup"
+require "simplecov"
+require "simplecov-console"
 require "activespan"
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::HTMLFormatter,
+  SimpleCov::Formatter::Console,
+])
+SimpleCov.start
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
