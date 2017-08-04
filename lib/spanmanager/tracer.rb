@@ -13,7 +13,7 @@ module SpanManager
 
     # @param tracer [OpenTracing::Tracer] the tracer to be wrapped.
     # @param active_span_source [SpanManager::ManagedSpanSource] the span source that keeps track of the current active span.
-    def initialize(tracer, managed_span_source)
+    def initialize(tracer, managed_span_source = ThreadLocalManagedSpanSource.new)
       @tracer = tracer
       @managed_span_source = managed_span_source
     end
