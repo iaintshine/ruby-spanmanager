@@ -1,9 +1,9 @@
 require "spec_helper"
 
-RSpec.describe ActiveSpan::Tracer do
+RSpec.describe SpanManager::Tracer do
   let(:tracer) { OpenTracing::Tracer.new }
-  let(:active_span_source) { ActiveSpan::ThreadLocalSpanSource.new }
-  let(:active_span_tracer) { ActiveSpan::Tracer.new(tracer, active_span_source) }
+  let(:active_span_source) { SpanManager::ThreadLocalManagedSpanSource.new }
+  let(:active_span_tracer) { SpanManager::Tracer.new(tracer, active_span_source) }
   let(:operation_name) { "GET /users" }
 
   describe :start_span do
@@ -11,10 +11,10 @@ RSpec.describe ActiveSpan::Tracer do
       active_span_tracer.start_span(operation_name)
     end
 
-    it 'returns instance of ActiveSpan::Span' do
+    it 'returns instance of ManagedSpan' do
       active_span = start_span
 
-      expect(active_span).to be_instance_of ActiveSpan::Span
+      expect(active_span).to be_instance_of SpanManager::ManagedSpan
     end
 
     it 'activates span' do

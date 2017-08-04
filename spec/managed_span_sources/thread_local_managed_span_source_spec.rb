@@ -1,14 +1,14 @@
 require "spec_helper"
 
-RSpec.describe ActiveSpan::ThreadLocalSpanSource do
+RSpec.describe SpanManager::ThreadLocalManagedSpanSource do
   let(:span) { OpenTracing::Span.new(tracer: nil, context: nil) }
-  let(:active_span_source) { ActiveSpan::ThreadLocalSpanSource.new }
+  let(:active_span_source) { SpanManager::ThreadLocalManagedSpanSource.new }
 
   before { active_span_source.clear }
 
   describe :make_active do
     it 'returns instance of ActiveSpan::Span' do
-      expect(active_span_source.make_active(span)).to be_instance_of ActiveSpan::Span
+      expect(active_span_source.make_active(span)).to be_instance_of SpanManager::ManagedSpan
     end
   end
 

@@ -1,7 +1,7 @@
 require "bundler/setup"
 require "simplecov"
 require "simplecov-console"
-require "activespan"
+require "spanmanager"
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::HTMLFormatter,

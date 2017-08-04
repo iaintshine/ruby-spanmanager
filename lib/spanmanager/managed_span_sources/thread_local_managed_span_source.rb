@@ -1,8 +1,8 @@
-module ActiveSpan
-  # ThreadLocalSpanSource allows an application access and manipulation of the current span state on per thread basis.
-  class ThreadLocalSpanSource < SpanSource
+module SpanManager
+  # ThreadLocalManagedSpanSource allows an application access and manipulation of the current span state on per thread basis.
+  class ThreadLocalManagedSpanSource < ManagedSpanSource
     def make_active(span)
-      active_span = Span.new(span, method(:pop))
+      active_span = ManagedSpan.new(span, method(:pop))
       push(active_span)
       active_span
     end
