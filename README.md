@@ -85,3 +85,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/iaintshine/ruby-spanmanager. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
+## Thanks
+
+The development of the gem was heavily inspired by [Span manager implementation for Java](https://github.com/opentracing-contrib/java-spanmanager/).
+
+Thank You for inspiration!
