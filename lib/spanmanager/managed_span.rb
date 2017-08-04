@@ -1,15 +1,15 @@
-module ActiveSpan
-  # The [ActiveSpan::Span] inherits all of the OpenTracing funcionality and layers on
+module SpanManager
+  # The [SpanManager::ManagedSpan] inherits all of the OpenTracing funcionality and layers on
   # in-process propagation capabilities.
-  class Span < OpenTracing::Span
+  class ManagedSpan < OpenTracing::Span
     extend Forwardable
 
     def_delegators :@span, :context, :operation_name=, :set_tag, :set_baggage_item, :get_baggage_item, :log, :finish
 
-    # Initializes a new active span. It's SpanSource responsibility to activate the span.
+    # Initializes a new active span. It's ManagedSpanSource responsibility to activate the span.
     #
     # @param span [OpenTracing::Span] the span to wrap
-    # @param deactivate [Proc] the current span deactivation supplier. The block must return instance of [ActiveSpan::Span]
+    # @param deactivate [Proc] the current span deactivation supplier. The block must return instance of [SpanManager::ManagedSpan]
     def initialize(span, deactivate)
       @span = span
       @deactivate = deactivate.respond_to?(:call) ? deactivate : nil

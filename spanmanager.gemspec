@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "activespan/version"
+require "spanmanager/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "activespan"
-  spec.version       = ActiveSpan::VERSION
+  spec.name          = "spanmanager"
+  spec.version       = SpanManager::VERSION
   spec.authors       = ["iaintshine"]
   spec.email         = ["bodziomista@gmail.com"]
 

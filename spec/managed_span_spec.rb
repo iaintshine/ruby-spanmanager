@@ -1,9 +1,9 @@
 require "spec_helper"
 
-RSpec.describe ActiveSpan::Span do
+RSpec.describe SpanManager::ManagedSpan do
   let(:span) { OpenTracing::Span.new(tracer: nil, context: nil) }
   let(:deactivate) { -> { active_span } }
-  let(:active_span)  { ActiveSpan::Span.new(span, deactivate) }
+  let(:active_span)  { SpanManager::ManagedSpan.new(span, deactivate) }
 
   describe :initialize do
     it 'creates active span' do
