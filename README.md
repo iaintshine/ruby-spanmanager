@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/iaintshine/ruby-spanmanager.svg?branch=master)](https://travis-ci.org/iaintshine/ruby-spanmanager)
+
 # SpanManager
 
 Current span management for OpenTracing in Ruby.
