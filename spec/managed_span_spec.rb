@@ -1,7 +1,7 @@
 require "spec_helper"
 
 RSpec.describe SpanManager::ManagedSpan do
-  let(:span) { OpenTracing::Span.new(tracer: nil, context: nil) }
+  let(:span) { OpenTracing::Span.new }
   let(:deactivate) { -> { active_span } }
   let(:active_span)  { SpanManager::ManagedSpan.new(span, deactivate) }
 
