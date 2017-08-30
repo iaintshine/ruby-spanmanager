@@ -1,7 +1,7 @@
 require "spec_helper"
 
 RSpec.describe SpanManager::ThreadLocalManagedSpanSource do
-  let(:span) { OpenTracing::Span.new(tracer: nil, context: nil) }
+  let(:span) { OpenTracing::Span.new }
   let(:active_span_source) { SpanManager::ThreadLocalManagedSpanSource.new }
 
   before { active_span_source.clear }
