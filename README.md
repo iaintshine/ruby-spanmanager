@@ -44,6 +44,7 @@ Provides the following additional methods:
 
 1. `deactivate` marks the end of active period for the current span.
 2. `active?` returns whether the span is active or not.
+3. `wrapped` returns the wrapped span.
 
 ## SpanManager::Tracer
 
