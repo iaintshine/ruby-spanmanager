@@ -18,6 +18,11 @@ module SpanManager
       @managed_span_source = managed_span_source
     end
 
+    # @return [OpenTracing::Tracer] the wrapped tracer
+    def wrapped
+      @tracer
+    end
+
     # Retrieves the current active span.
     #
     # @return [SpanManager::ManagedSpan] returns the current active span, or null if none could be found.
