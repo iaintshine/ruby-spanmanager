@@ -6,6 +6,12 @@ RSpec.describe SpanManager::Tracer do
   let(:active_span_tracer) { SpanManager::Tracer.new(tracer, active_span_source) }
   let(:operation_name) { "GET /users" }
 
+  describe :wrapped do
+    it 'returns the wrapped tracer' do
+      expect(active_span_tracer.wrapped).to eq(tracer)
+    end
+  end
+
   describe :start_span do
     def start_span
       active_span_tracer.start_span(operation_name)

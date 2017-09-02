@@ -54,6 +54,10 @@ It's a wrapper that forwards all calls to another `OpenTracing::Tracer` implemen
 Spans which you will create through this tracer will be automatically activated when started, and
 deactivated when they finish.
 
+Provides the following additional methods:
+
+1. `wrapped` returns the wrapped tracer.
+
 ## Usage
 
 ```ruby
