@@ -16,6 +16,11 @@ module SpanManager
       @active = true
     end
 
+    # @return [OpenTracing::Span] the wrapped span
+    def wrapped
+      @span
+    end
+
     # @return [Boolean] whether the span is active or not
     def active?
       @active

@@ -11,6 +11,12 @@ RSpec.describe SpanManager::ManagedSpan do
     end
   end
 
+  describe :wrapped do
+    it 'returns the wrapped span' do
+      expect(active_span.wrapped).to eq(span)
+    end
+  end
+
   describe :deactivate do
     it 'calls deactivate supplier' do
       expect(deactivate).to receive(:call).and_call_original
